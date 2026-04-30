@@ -22,7 +22,11 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .csrf(csrf -> csrf.disable())
+            .headers(headers -> headers
+                .frameOptions(frame -> frame.disable()) // <-- adicionar
+            )
             .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/h2-console/**").permitAll() // <-- adicionar
                 .requestMatchers(HttpMethod.GET, "/usuario").hasAuthority("COMUM")
                 .requestMatchers(HttpMethod.GET, "/usuario/*").hasAuthority("COMUM")
                 .requestMatchers(HttpMethod.POST).hasAuthority("ADMIN")
