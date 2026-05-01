@@ -115,4 +115,4 @@ Captura de tela da tabela Imovel no MySQL
 - Cássio Roberto Ferreira da Silva
 - Gabriel Tavares Nogueira de Moura
 - Miguel de Matos Barros Barbosa
-- Juliana
+- Juliana Neri Silva da Cruz
